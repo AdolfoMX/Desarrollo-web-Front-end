@@ -8,11 +8,9 @@ function Formulario() {
         <div className="container col-md-5 mt-4">
             <form>
                 <h2 className="mb-3">Formulario</h2>
-        //nombre
                 <div className="mb-3">
                     <input type="text" className="form-control" required placeholder="Nombre" onChange={e=>setnombre(e.target.value)}></input>
                 </div>
-        //apellido
                 <div className="mb-3">
                     <input type="text" className="form-control" required placeholder="Apellido" onChange={e=>setapellido(e.target.value)}></input>
                 </div>
@@ -23,4 +21,3 @@ function Formulario() {
 }
 
 export default Formulario
-
