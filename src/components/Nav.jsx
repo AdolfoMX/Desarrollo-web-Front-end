@@ -21,7 +21,7 @@ export default function Nav() {
                     <i className='fas fa-user'></i> Bienvenido </Link>
                     <Link className="nav-link" to="/" onClick={()=>salir()}>
                         <i className='fas fa-user-times'></i> Salir </Link>
-                    <Link className="nav-link" to="/"><i className='fas fa-user-plus'></i> Registrar</Link>
+                    <Link className="nav-link" to="/registrar"><i className='fas fa-user-plus'></i> Registrar</Link>
                 </div>
             </div>
         </nav>
