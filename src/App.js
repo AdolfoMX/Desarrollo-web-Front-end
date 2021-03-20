@@ -1,13 +1,16 @@
-import Formulario from './components/Formulario.js';
-import Navbar from './components/Navbar.js';
+import React from 'react';
+import {BrowserRouter as Router,Route} from 'react-router-dom';
+import Formulario from './components/Formulario';
+import Login from './components/Login';
+import Nav from './components/Nav';
 
-//Edit <code>src/App.js</code> and save to reload.
 function App() {
   return (
-    <div>
-      <Navbar/>
-      <Formulario/>
-    </div>
+    <Router>
+      <Nav />
+      <Route path='/' exact component={Login}/>
+    </Router>
+    
   );
 }
 
