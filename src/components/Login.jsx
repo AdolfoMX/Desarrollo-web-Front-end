@@ -9,7 +9,7 @@ export default function Login() {
     const login=async(e)=>{
         e.preventDefault()
         const usuario={correo,contrasena}
-        const respuesta=await axios.post('http://localhost:4000/usuario/login',usuario)
+        const respuesta=await axios.post('/usuario/login',usuario)
         const mensaje=respuesta.data.mensaje
         if(mensaje!=='Bienvenido'){
             Swal.fire({
@@ -25,7 +25,7 @@ export default function Login() {
             sessionStorage.setItem('token',token)
             sessionStorage.setItem('nombre',nombre)
             sessionStorage.setItem('idusuario',idusuario)
-            window.location.href='/'
+            window.location.href='/index'
         }
 
     }
