@@ -11,6 +11,8 @@ Librerías para Node.js:
 * react-router-dom
 * sweetalert2
 * axios
+* react-bootstrap-table2-paginator
+* react-bootstrap-table-next
 ## Instalación
 Una vez descargado el repositorio abrir la ubicación de la carpeta por medio de la terminal e instalar las librerias de Node.js.  
 Debe instalar **react** haciendo uso de la terminal con el siguiente comando:
@@ -25,6 +27,7 @@ El comando anterior descarga todos los modulos necesarios para la visualización
 Para las otras librerias debe utilizar este comando:
 ```
 npm i react-router-dom sweetalert2 axios
+npm install react-bootstrap-table2-paginator react-bootstrap-table-next  --save --legacy-peer-deps
 ```
 Para ejecutar la carpeta hacer uso del comando: 
 ```
