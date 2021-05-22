@@ -7,6 +7,10 @@ export default function Actualizar(props) {
     const [marca, setMarca] = useState('')
     const [modelo, setModelo] = useState('')
     const [anio, setAnio] = useState('')
+    const [color, setColor] = useState('')
+    const [kilometraje, setKilo] = useState('')
+    const [transmision, setTransm] = useState('')
+    const [precio, setPrecio] = useState('')
 
 
     useEffect(()=>{
@@ -23,6 +27,10 @@ export default function Actualizar(props) {
         setMarca(respuesta.data.marca)
         setModelo(respuesta.data.modelo)
         setAnio(respuesta.data.anio)
+        setColor(respuesta.data.color)
+        setKilo(respuesta.data.kilometraje)
+        setTransm(respuesta.data.transmision)
+        setPrecio(respuesta.data.precio)
     }
 
     const actualizar=async(e)=>{
@@ -32,7 +40,11 @@ export default function Actualizar(props) {
         const vehiculo={
             marca,
             modelo,
-            anio
+            anio,
+            color,
+            kilometraje,
+            transmision,
+            precio
         }
         const respuesta=await Axios.put('/vehiculos/actualizar_vehiculo/'+id,vehiculo,{
             headers:{'autorizacion':token}
@@ -69,6 +81,26 @@ export default function Actualizar(props) {
                                     <label>Año</label>
                                     <input type='text' className='form-control' required
                                    onChange={e => setAnio(e.target.value)} value={anio}/>
+                                </div>
+                                <div className="form-group">
+                                    <label>Color</label>
+                                    <input type='text' className='form-control' required
+                                   onChange={e => setColor(e.target.value)}/>
+                                </div>
+                                <div className="form-group">
+                                    <label>Kilometraje</label>
+                                    <input type='text' className='form-control' required
+                                   onChange={e => setKilo(e.target.value)}/>
+                                </div>
+                                <div className="form-group">
+                                    <label>Transmision</label>
+                                    <input type='text' className='form-control' required
+                                   onChange={e => setTransm(e.target.value)}/>
+                                </div>
+                                <div className="form-group">
+                                    <label>Precio</label>
+                                    <input type='text' className='form-control' required
+                                   onChange={e => setPrecio(e.target.value)}/>
                                 </div>
                                 <div className="form-group">
                                     <button className='btn btn-warning' type='submit'>Actualizar</button>

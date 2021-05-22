@@ -33,7 +33,7 @@ function Navbar() {
                         <Link className="btn btn-primary" style={{width: "13rem", margin: "1rem"}} to="/compra_un_auto">Comprar un auto</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="btn btn-primary" style={{width: "13rem", margin: "1rem"}} to="/">Aplicar a crédito</Link>
+                        <Link className="btn btn-primary" style={{width: "13rem", margin: "1rem"}} to="/tabla">Aplicar a crédito</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="btn btn-primary" style={{width: "13rem", margin: "1rem"}} to="/vende_tu_auto">Cambia o vende tu auto</Link>

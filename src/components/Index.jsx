@@ -10,6 +10,10 @@ function Index() {
     const [marca, setMarca] = useState('')
     const [modelo, setModelo] = useState('')
     const [anio, setAnio] = useState('')
+    const [color, setColor] = useState('')
+    const [kilometraje, setKilo] = useState('')
+    const [transmision, setTransm] = useState('')
+    const [precio, setPrecio] = useState('')
 
     useEffect(() => {
         obtenerVehiculos()
@@ -27,7 +31,7 @@ function Index() {
     
     const guardar=async(e)=>{
         e.preventDefault()
-        const vehiculo={marca,modelo,anio}
+        const vehiculo={marca,modelo,anio,color,kilometraje,transmision,precio}
         const token=sessionStorage.getItem('token')
         const respuesta=await Axios.post('/vehiculos/crear_vehiculo',vehiculo,{
             headers:{'autorizacion':token}
@@ -115,6 +119,10 @@ function Index() {
                                             <th>Marca</th>
                                             <th>Modelo</th>
                                             <th>Año</th>
+                                            <th>Color</th>
+                                            <th>Kilometraje</th>
+                                            <th>Transmision</th>
+                                            <th>Precio</th>
                                             <th className="text-center">Opciones</th>
                                         </tr>
                                     </thead>
@@ -126,6 +134,10 @@ function Index() {
                                                     <td>{vehiculo.marca}</td>
                                                     <td>{vehiculo.modelo}</td>
                                                     <td>{vehiculo.anio}</td>
+                                                    <td>{vehiculo.color}</td>
+                                                    <td>{vehiculo.kilometraje}</td>
+                                                    <td>{vehiculo.transmision}</td>
+                                                    <td>{vehiculo.precio}</td>
                                                     <td className="text-center">
                                                         <button className="btn btn-warning mr-1"
                                                         onClick={()=>eliminar(vehiculo._id)}
@@ -169,6 +181,26 @@ function Index() {
                                     <label>Año</label>
                                     <input type='text' className='form-control' required
                                    onChange={e => setAnio(e.target.value)}/>
+                                </div>
+                                <div className="form-group">
+                                    <label>Color</label>
+                                    <input type='text' className='form-control' required
+                                   onChange={e => setColor(e.target.value)}/>
+                                </div>
+                                <div className="form-group">
+                                    <label>Kilometraje</label>
+                                    <input type='text' className='form-control' required
+                                   onChange={e => setKilo(e.target.value)}/>
+                                </div>
+                                <div className="form-group">
+                                    <label>Transmision</label>
+                                    <input type='text' className='form-control' required
+                                   onChange={e => setTransm(e.target.value)}/>
+                                </div>
+                                <div className="form-group">
+                                    <label>Precio</label>
+                                    <input type='text' className='form-control' required
+                                   onChange={e => setPrecio(e.target.value)}/>
                                 </div>
                                 <div className="form-group">
                                     <button className='btn btn-primary' type='submit'>Guardar</button>

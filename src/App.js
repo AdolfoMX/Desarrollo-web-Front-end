@@ -7,6 +7,8 @@ import Registro from './components/Registro';
 import Login from './components/Login';
 import Actualizar from './components/Actualizar.jsx';
 import Compra from './components/Compra.jsx';
+import Tabla from './components/Tabla.jsx';
+import Portada from './components/Portada.js';
 
 const estaLogeado=()=>{
   const token=sessionStorage.getItem('token')
@@ -30,12 +32,14 @@ function App() {
     <div>
       <Router>
         <Navbar/>
+        <Route path='/' exact component={Portada}/>
         <Route path='/vende_tu_auto' exact component={Formulario}/>
         <Myroute path='/index' exact component={Index}/>
         <Publicroute path='/registrar' exact component={Registro}/>
         <Publicroute path='/iniciar' exact component={Login}/>
         <Myroute path='/editar/:id' exact component={Actualizar}/>
         <Route path='/compra_un_auto' exact component={Compra}/>
+        <Route path='/tabla' exact component={Tabla}/>
       </Router>
     </div>
   );
